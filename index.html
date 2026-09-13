@@ -1,0 +1,402 @@
+<title>Gustaf Bärlund</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap">
+
+<style>
+:root{
+  --paper:#F4F2EC;
+  --ink:#191815;
+  --ink-2:#5E5B52;
+  --ink-3:#8F8B7F;
+  --cell:#E3E0D6;
+  --cell-2:#D9D5C9;
+  --line:#D5D1C6;
+  --hit:#191815;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#141412;
+    --ink:#EDEBE4;
+    --ink-2:#A8A499;
+    --ink-3:#77746A;
+    --cell:#232320;
+    --cell-2:#2C2C28;
+    --line:#2E2E2A;
+    --hit:#EDEBE4;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#141412;
+  --ink:#EDEBE4;
+  --ink-2:#A8A499;
+  --ink-3:#77746A;
+  --cell:#232320;
+  --cell-2:#2C2C28;
+  --line:#2E2E2A;
+  --hit:#EDEBE4;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--paper)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size:17px;
+  font-weight:400;
+  line-height:1.55;
+  margin:0;
+  padding:0;
+  -webkit-font-smoothing:antialiased;
+}
+.w{max-width:1240px;margin:0 auto;padding-inline:clamp(18px,4vw,52px)}
+a{color:inherit}
+a:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+p{margin:0 0 1em}
+p:last-child{margin-bottom:0}
+
+.lbl{
+  font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);
+}
+
+/* ---------- nav ---------- */
+nav{position:sticky;top:0;z-index:30;background:var(--paper);border-bottom:1px solid var(--line)}
+nav .row{display:flex;flex-wrap:wrap;gap:8px 26px;align-items:baseline;justify-content:space-between;padding-block:15px}
+nav .me{font-size:1rem;font-weight:600;letter-spacing:-.01em;text-decoration:none}
+nav ul{display:flex;flex-wrap:wrap;gap:0 clamp(14px,2vw,26px);list-style:none;margin:0;padding:0}
+nav a.l{font-size:.85rem;font-weight:500;color:var(--ink-2);text-decoration:none}
+nav a.l:hover{color:var(--ink)}
+
+/* ---------- kontaktark-rutnät ---------- */
+.sheet{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
+.sheet .c{
+  aspect-ratio:4/5;max-width:100%;background:var(--cell);
+  position:relative;
+}
+.sheet .c::after{
+  content:attr(data-n);
+  position:absolute;left:5px;bottom:4px;
+  font-size:.56rem;font-weight:600;letter-spacing:.06em;color:var(--ink-3);
+}
+.sheet .c.hit{background:var(--hit)}
+.sheet .c.hit::after{color:var(--paper)}
+
+/* ---------- hero ---------- */
+.hero{padding-block:clamp(46px,7vw,96px) clamp(46px,7vw,92px);border-bottom:1px solid var(--line)}
+.hero .in{display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(34px,5vw,74px);align-items:center}
+h1{
+  font-size:clamp(2.2rem,5.6vw,4.4rem);
+  line-height:1.04;font-weight:600;letter-spacing:-.028em;margin:0 0 26px;max-width:14ch;
+}
+.hero p{max-width:38ch;color:var(--ink-2);font-size:clamp(1rem,1.3vw,1.16rem)}
+.hero .cap{margin-top:12px;text-align:right}
+
+/* ---------- sektion ---------- */
+section{padding-block:clamp(46px,7vw,96px);border-bottom:1px solid var(--line)}
+.head{display:grid;grid-template-columns:minmax(120px,15%) 1fr;gap:clamp(18px,3vw,44px);align-items:baseline;margin-bottom:clamp(28px,4vw,54px)}
+h2{
+  font-size:clamp(1.6rem,3.6vw,2.7rem);
+  line-height:1.08;font-weight:600;letter-spacing:-.024em;margin:0;max-width:20ch;
+}
+.head .lbl{padding-top:.5em}
+
+.rows{border-top:1px solid var(--line)}
+.row5{
+  display:grid;grid-template-columns:minmax(120px,15%) 1fr minmax(150px,26%);
+  gap:clamp(16px,3vw,40px);
+  padding-block:clamp(18px,2.4vw,28px);
+  border-bottom:1px solid var(--line);align-items:start;
+}
+.row5 h3{margin:0 0 5px;font-size:1.12rem;font-weight:600;letter-spacing:-.014em}
+.row5 .d{color:var(--ink-2);font-size:.97rem;max-width:46ch}
+.row5 .four{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;align-self:center}
+.row5 .four .c{aspect-ratio:4/5;background:var(--cell)}
+.row5 .four .c.hit{background:var(--hit)}
+
+.note{
+  display:grid;grid-template-columns:minmax(120px,15%) 1fr;
+  gap:clamp(18px,3vw,44px);margin-top:clamp(28px,4vw,48px);
+}
+.note .t{max-width:56ch;color:var(--ink-2)}
+.note .t b{color:var(--ink);font-weight:600}
+
+/* ---------- siffror ---------- */
+.stats{border-top:1px solid var(--line)}
+.st{
+  display:grid;grid-template-columns:minmax(120px,15%) minmax(90px,12%) 1fr;
+  gap:clamp(16px,3vw,40px);
+  padding-block:clamp(18px,2.4vw,30px);border-bottom:1px solid var(--line);align-items:baseline;
+}
+.st .v{font-size:clamp(1.9rem,4vw,3.1rem);font-weight:600;letter-spacing:-.03em;line-height:1}
+.st .d{color:var(--ink-2);max-width:52ch;font-size:.99rem}
+
+/* ---------- koncept ---------- */
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,26px)}
+.three figure{margin:0}
+.three .big{aspect-ratio:4/5;max-width:100%;background:var(--cell);display:grid;place-items:center;padding:16px;text-align:center}
+.three .big span{font-size:.82rem;font-weight:500;color:var(--ink-3)}
+.three figcaption{margin-top:12px;color:var(--ink-2);font-size:.92rem;line-height:1.45;max-width:32ch}
+.three figcaption b{color:var(--ink);font-weight:600}
+
+/* ---------- qa ---------- */
+.qa{border-top:1px solid var(--line)}
+.qa .q{
+  display:grid;grid-template-columns:minmax(120px,15%) minmax(150px,24%) 1fr;
+  gap:clamp(16px,3vw,40px);
+  padding-block:clamp(18px,2.4vw,30px);border-bottom:1px solid var(--line);
+}
+.qa h3{margin:0;font-size:1rem;font-weight:600;line-height:1.4;letter-spacing:-.012em}
+.qa .a{color:var(--ink-2);max-width:48ch;font-size:.99rem}
+.qa .a b{color:var(--ink);font-weight:600}
+.qa .n{color:var(--ink-3);font-size:.72rem;font-weight:600;letter-spacing:.14em;padding-top:.35em}
+
+/* ---------- kontakt ---------- */
+.contact{padding-block:clamp(52px,8vw,104px)}
+.contact .in{display:grid;grid-template-columns:minmax(120px,15%) 1fr;gap:clamp(18px,3vw,44px)}
+.contact h2{max-width:15ch;margin-bottom:22px}
+.contact p{max-width:42ch;color:var(--ink-2)}
+.contact .lines{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px 46px;font-size:1.08rem;font-weight:500}
+.contact .lines a{text-decoration:none;border-bottom:1.5px solid var(--ink-3);padding-bottom:3px}
+.contact .lines a:hover{border-color:var(--ink)}
+.contact .lines span{color:var(--ink-3);font-weight:400}
+
+footer{border-top:1px solid var(--line)}
+footer .in{padding-block:22px 40px;display:flex;flex-wrap:wrap;gap:6px 40px;font-size:.76rem;color:var(--ink-3);font-weight:500}
+
+@media (max-width:880px){
+  .hero .in{grid-template-columns:1fr;gap:34px}
+  .hero .cap{text-align:left}
+  h1{max-width:none}
+  .head,.note,.contact .in{grid-template-columns:1fr;gap:10px}
+  .row5{grid-template-columns:1fr;gap:14px}
+  .row5 .four{max-width:280px}
+  .st{grid-template-columns:1fr;gap:6px}
+  .qa .q{grid-template-columns:1fr;gap:8px}
+  .three{grid-template-columns:1fr;gap:30px}
+  .qa .n{display:none}
+}
+</style>
+
+<nav>
+  <div class="w row">
+    <a class="me" href="#top">Gustaf Bärlund</a>
+    <ul>
+      <li><a class="l" href="#arbetet">Arbetet</a></li>
+      <li><a class="l" href="#laget">Läget</a></li>
+      <li><a class="l" href="#koncept">Koncept</a></li>
+      <li><a class="l" href="#om">Om</a></li>
+      <li><a class="l" href="#kontakt">Kontakt</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div id="top">
+
+  <header class="hero">
+    <div class="w in">
+      <div>
+        <h1>Tjugo nya annonser i månaden. En av dem vinner.</h1>
+        <p>Ungefär var tjugonde annons blir en vinnare. Det gäller alla, även byråer med hundra anställda. Ingen kan peka ut den i förväg, så det enda som fungerar är att lämna marknaden tillräckligt mycket att välja mellan. Det är vad jag levererar, varje månad, till en klinik per stad.</p>
+      </div>
+      <div>
+        <div class="sheet" aria-hidden="true">
+          <div class="c" data-n="01"></div><div class="c" data-n="02"></div><div class="c" data-n="03"></div><div class="c" data-n="04"></div>
+          <div class="c" data-n="05"></div><div class="c" data-n="06"></div><div class="c" data-n="07"></div><div class="c" data-n="08"></div>
+          <div class="c" data-n="09"></div><div class="c" data-n="10"></div><div class="c" data-n="11"></div><div class="c" data-n="12"></div>
+          <div class="c" data-n="13"></div><div class="c hit" data-n="14"></div><div class="c" data-n="15"></div><div class="c" data-n="16"></div>
+          <div class="c" data-n="17"></div><div class="c" data-n="18"></div><div class="c" data-n="19"></div><div class="c" data-n="20"></div>
+        </div>
+        <div class="lbl cap">En månads leverans</div>
+      </div>
+    </div>
+  </header>
+
+  <section id="arbetet">
+    <div class="w">
+      <div class="head">
+        <div class="lbl">Arbetet</div>
+        <h2>Fem vinklar, fyra utföranden av varje</h2>
+      </div>
+
+      <div class="rows">
+        <div class="row5">
+          <div class="lbl">01 Problemet</div>
+          <div>
+            <h3>Namnger besväret med kundens egna ord</h3>
+            <div class="d">Testar om målgruppen känner igen sig. Fungerar det vet ni att det är irritationen som driver, inte drömmen.</div>
+          </div>
+          <div class="four" aria-hidden="true"><div class="c"></div><div class="c"></div><div class="c"></div><div class="c"></div></div>
+        </div>
+
+        <div class="row5">
+          <div class="lbl">02 Resultatet</div>
+          <div>
+            <h3>Visar förändringen, inte produkten</h3>
+            <div class="d">Samma ljus, samma vinkel, två tidpunkter. Testar om transformationen är det som lockar.</div>
+          </div>
+          <div class="four" aria-hidden="true"><div class="c"></div><div class="c"></div><div class="c"></div><div class="c"></div></div>
+        </div>
+
+        <div class="row5">
+          <div class="lbl">03 Beviset</div>
+          <div>
+            <h3>Någon annan som redan vågat</h3>
+            <div class="d">Testar om misstro är det som bromsar, vilket det ofta är hos någon som aldrig varit hos er förut.</div>
+          </div>
+          <div class="four" aria-hidden="true"><div class="c"></div><div class="c"></div><div class="c hit"></div><div class="c"></div></div>
+        </div>
+
+        <div class="row5">
+          <div class="lbl">04 Erbjudandet</div>
+          <div>
+            <h3>Pris, säsong och en anledning att boka nu</h3>
+            <div class="d">Testar om tröskeln är det avgörande. Den vinkel flest lokala företag hoppar över helt.</div>
+          </div>
+          <div class="four" aria-hidden="true"><div class="c"></div><div class="c"></div><div class="c"></div><div class="c"></div></div>
+        </div>
+
+        <div class="row5">
+          <div class="lbl">05 Invändningen</div>
+          <div>
+            <h3>Bemöter tveksamheten innan den hinner tänkas</h3>
+            <div class="d">Gör det ont, håller det, är det värt pengarna. Testar vilken specifik oro som stoppar bokningen.</div>
+          </div>
+          <div class="four" aria-hidden="true"><div class="c"></div><div class="c"></div><div class="c"></div><div class="c"></div></div>
+        </div>
+      </div>
+
+      <div class="note">
+        <div class="lbl">Villkoren</div>
+        <div class="t">
+          <p>Efter en månad vet ni inte bara vilken bild som gick bäst, utan <b>vilken sorts argument som biter på era kunder.</b> Den insikten går inte att få fram med tjugo varianter av samma idé.</p>
+          <p>Levereras senast den 25:e, i format för Meta och Instagram. Tjugo minuter i månaden går vi igenom siffrorna. <b>4 900 kr i månaden, ingen bindningstid.</b> Ni behåller ert annonskonto och er budget, jag behöver bara läsbehörighet för att se vad som presterar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="laget">
+    <div class="w">
+      <div class="head">
+        <div class="lbl">Läget</div>
+        <h2>Jag har läst varenda annons branschen kör i Sverige</h2>
+      </div>
+
+      <div class="stats">
+        <div class="st">
+          <div class="lbl">I landet</div>
+          <div class="v">45</div>
+          <div class="d">aktiva annonser i hela Sverige på sökordet fransförlängning. De allra flesta är e-handel som säljer serum och mascara. Bara en handfull kommer från kliniker.</div>
+        </div>
+        <div class="st">
+          <div class="lbl">I Växjö</div>
+          <div class="v">0</div>
+          <div class="d">av dem kommer härifrån. Inte en enda klinik i staden syns i Metas annonsbibliotek.</div>
+        </div>
+        <div class="st">
+          <div class="lbl">Längst körning</div>
+          <div class="v">9 mån</div>
+          <div class="d">har de skickligaste e-handlarna kört samma koncept, i sex varianter parallellt. Så länge kör ingen något som går back.</div>
+        </div>
+      </div>
+
+      <div class="note">
+        <div class="lbl">Slutsatsen</div>
+        <div class="t">
+          <p>Metas annonsbibliotek är offentligt och visar varje annons som körs i landet, tillsammans med datumet den startade. En annons som körts i sextio dagar körs för att den tjänar pengar.</p>
+          <p><b>E-handlarna kan hantverket och klinikerna gör det inte.</b> Skillnaden ligger inte i budget och inte i hur snygga bilderna är, utan i att den ena gruppen testar systematiskt och den andra lägger upp en bild när de kommer på det. Det är den skillnaden jag säljer, och jag kan visa exakt vilka annonser jag menar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="koncept">
+    <div class="w">
+      <div class="head">
+        <div class="lbl">Koncept</div>
+        <h2>Byggda på strukturer som bevisligen körs</h2>
+      </div>
+      <div class="three">
+        <figure>
+          <div class="big"><span>Byt mot bild 1</span></div>
+          <figcaption><b>Problemet.</b> Torr hud i fönsterljus. Rubriken namnger besväret rakt av.</figcaption>
+        </figure>
+        <figure>
+          <div class="big"><span>Byt mot bild 2</span></div>
+          <figcaption><b>Resultatet.</b> Dag 1 mot dag 14. Samma ljus, samma vinkel, ingen retusch.</figcaption>
+        </figure>
+        <figure>
+          <div class="big"><span>Byt mot bild 3</span></div>
+          <figcaption><b>Erbjudandet.</b> Säsongskrok, tydligt nästa steg, begränsat antal tider.</figcaption>
+        </figure>
+      </div>
+      <div class="note">
+        <div class="lbl">Not</div>
+        <div class="t" style="color:var(--ink-3);font-size:.92rem">Konceptförslag framtagna på eget initiativ. Inte utförda kunduppdrag.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="om">
+    <div class="w">
+      <div class="head">
+        <div class="lbl">Om</div>
+        <h2>Rakt på, så ni vet vad ni får</h2>
+      </div>
+      <div class="qa">
+        <div class="q">
+          <div class="n">01</div>
+          <h3>Vem är du?</h3>
+          <div class="a">Gustaf Bärlund, 32 år, bor i Växjö. Egen firma med F-skatt. Jag gör annonsmaterial och hemsidor åt lokala företag i Småland.</div>
+        </div>
+        <div class="q">
+          <div class="n">02</div>
+          <h3>Hur många kunder har du?</h3>
+          <div class="a">Få, och det är avsiktligt. Jag tar en klinik per stad, dels för att slippa göra samma material åt två konkurrenter, dels för att ni ska få den tid arbetet kräver.</div>
+        </div>
+        <div class="q">
+          <div class="n">03</div>
+          <h3>Lovar du att jag säljer mer?</h3>
+          <div class="a"><b>Nej.</b> Jag vet ingenting om er prissättning, er konkurrens eller er bokningssida, och den som lovar en siffra utan att veta det ljuger. Jag lovar material varje månad, och att vi mäter om det presterar bättre än det ni kör idag. Det är mätbart inom två veckor.</div>
+        </div>
+        <div class="q">
+          <div class="n">04</div>
+          <h3>Sköter du annonseringen också?</h3>
+          <div class="a">Inte i det här paketet. Vill ni att jag tar över driften pratar vi om det när materialet har visat vad det går för.</div>
+        </div>
+        <div class="q">
+          <div class="n">05</div>
+          <h3>Vad behöver ni göra?</h3>
+          <div class="a">Ett samtal på 45 minuter i början om ert erbjudande och vad en kund är värd för er. Sedan tjugo minuter i månaden. Resten sköter jag.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="kontakt" style="border-bottom:0">
+    <div class="w in">
+      <div class="lbl">Kontakt</div>
+      <div>
+        <h2>Vill ni se hur det skulle se ut?</h2>
+        <p>Hör av er så gör jag tre förslag på annonsmaterial åt er. Det kostar ingenting och jag vill inget tillbaka. Tycker ni att de är vettiga pratar vi vidare, annars behåller ni dem ändå.</p>
+        <div class="lines">
+          <a href="mailto:gustafbarlund@gmail.com?subject=Tre%20f%C3%B6rslag">gustafbarlund@gmail.com</a>
+          <span>Växjö, Småland</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="w in">
+      <span>Gustaf Bärlund</span>
+      <span>Annonsmaterial för kliniker och salonger</span>
+      <span>F-skatt</span>
+    </div>
+  </footer>
+
+</div>
