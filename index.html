@@ -1,6 +1,19 @@
-<title>Gustaf Bärlund</title>
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>Gustaf Bärlund — annonsmaterial för kliniker i Småland</title>
+<meta name="description" content="Tjugo nya annonser i månaden till en klinik per stad. Växjö.">
+<meta property="og:title" content="Tjugo nya annonser i månaden. En av dem vinner.">
+<meta property="og:description" content="Annonsmaterial för hudkliniker och salonger. En klinik per stad.">
+<meta property="og:image" content="https://gustafbarlund.se/img/og.jpg">
+<meta property="og:url" content="https://gustafbarlund.se/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap">
 
 <style>
@@ -137,8 +150,29 @@ h2{
 /* ---------- koncept ---------- */
 .three{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,26px)}
 .three figure{margin:0}
-.three .big{aspect-ratio:4/5;max-width:100%;background:var(--cell);display:grid;place-items:center;padding:16px;text-align:center}
-.three .big span{font-size:.82rem;font-weight:500;color:var(--ink-3)}
+/* ---------- annons ---------- */
+.ad{margin:0}
+.ad-frame{
+  position:relative;aspect-ratio:4/5;overflow:hidden;
+  container-type:inline-size;
+}
+.ad-frame::before{
+  content:"";position:absolute;inset:0 0 auto;height:58%;
+  background:linear-gradient(to bottom,rgba(0,0,0,.55),rgba(0,0,0,0));
+  z-index:1;pointer-events:none;
+}
+.ad-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ad-head{
+  position:absolute;top:7%;left:0;right:0;padding:0 8%;z-index:2;
+  font-size:7cqw;font-weight:600;line-height:1.12;
+  letter-spacing:-.025em;color:#fff;margin:0;
+}
+.ad-cta{
+  position:absolute;bottom:8%;left:8%;z-index:2;
+  font-size:3.8cqw;font-weight:600;letter-spacing:-.01em;
+  color:#fff;border-bottom:1.5px solid rgba(255,255,255,.65);
+  padding-bottom:3px;margin:0;
+}
 .three figcaption{margin-top:12px;color:var(--ink-2);font-size:.92rem;line-height:1.45;max-width:32ch}
 .three figcaption b{color:var(--ink);font-weight:600}
 
@@ -180,6 +214,8 @@ footer .in{padding-block:22px 40px;display:flex;flex-wrap:wrap;gap:6px 40px;font
   .qa .n{display:none}
 }
 </style>
+</head>
+<body>
 
 <nav>
   <div class="w row">
@@ -321,16 +357,28 @@ footer .in{padding-block:22px 40px;display:flex;flex-wrap:wrap;gap:6px 40px;font
         <h2>Byggda på strukturer som bevisligen körs</h2>
       </div>
       <div class="three">
-        <figure>
-          <div class="big"><span>Byt mot bild 1</span></div>
+        <figure class="ad">
+          <div class="ad-frame">
+            <img src="img/01-narbild-hud.webp" alt="" width="1400" height="1750" loading="lazy">
+            <p class="ad-head">Torr hud som inte blir bättre hur mycket kräm du än lägger på?</p>
+            <p class="ad-cta">Boka en hudanalys</p>
+          </div>
           <figcaption><b>Problemet.</b> Torr hud i fönsterljus. Rubriken namnger besväret rakt av.</figcaption>
         </figure>
-        <figure>
-          <div class="big"><span>Byt mot bild 2</span></div>
+        <figure class="ad">
+          <div class="ad-frame">
+            <img src="img/02-fore-efter.webp" alt="" width="1400" height="1750" loading="lazy">
+            <p class="ad-head">Huden såg ut så här i höstas. Så här ser den ut nu.</p>
+            <p class="ad-cta">Se hur det går till</p>
+          </div>
           <figcaption><b>Resultatet.</b> Dag 1 mot dag 14. Samma ljus, samma vinkel, ingen retusch.</figcaption>
         </figure>
-        <figure>
-          <div class="big"><span>Byt mot bild 3</span></div>
+        <figure class="ad">
+          <div class="ad-frame">
+            <img src="img/05-stilleben.webp" alt="" width="1400" height="1750" loading="lazy">
+            <p class="ad-head">Septemberpriset på djuprengöring — fyra tider kvar</p>
+            <p class="ad-cta">Boka nu</p>
+          </div>
           <figcaption><b>Erbjudandet.</b> Säsongskrok, tydligt nästa steg, begränsat antal tider.</figcaption>
         </figure>
       </div>
@@ -400,3 +448,5 @@ footer .in{padding-block:22px 40px;display:flex;flex-wrap:wrap;gap:6px 40px;font
   </footer>
 
 </div>
+</body>
+</html>
